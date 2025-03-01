@@ -1,0 +1,80 @@
+{
+  "countries": [
+    {
+      "id": 1,
+      "name": "オーストラリア",
+      "cities": [
+        {
+          "name": "シドニー, オーストラリア",
+          "imageUrl": "./img/Sydney.jpg",
+          "description": "シドニー・オペラハウスやハーバーブリッジなどの象徴的なランドマークで知られる活気ある都市。"
+        },
+        {
+          "name": "メルボルン, オーストラリア",
+          "imageUrl": "./img/Melbourne.jpg",
+          "description": "アート、グルメ、多様な文化が魅力のカルチャー都市。"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "日本",
+      "cities": [
+        {
+          "name": "東京, 日本",
+          "imageUrl": "./img/Tokyo.jpg",
+          "description": "伝統と最先端が融合した大都市。桜や豊かな文化で世界的に有名。"
+        },
+        {
+          "name": "京都, 日本",
+          "imageUrl": "./img/Kyoto.jpg",
+          "description": "歴史的な寺院や庭園、伝統的な茶屋が魅力の古都。"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ブラジル",
+      "cities": [
+        {
+          "name": "リオデジャネイロ, ブラジル",
+          "imageUrl": "./img/Rio_de_Janeiro.jpg",
+          "description": "美しいビーチやカーニバル、象徴的な観光名所で知られる活気ある都市。"
+        },
+        {
+          "name": "サンパウロ, ブラジル",
+          "imageUrl": "./img/Sao_Paulo.jpg",
+          "description": "多様な文化と芸術、活気あるナイトライフを誇るブラジル最大の経済都市。"
+        }
+      ]
+    }
+  ],
+  "temples": [
+    {
+      "id": 1,
+      "name": "アンコール・ワット, カンボジア",
+      "imageUrl": "./img/Angkor.jpg",
+      "description": "世界遺産にも登録されている、世界最大級の宗教建築遺跡。"
+    },
+    {
+      "id": 2,
+      "name": "タージ・マハル, インド",
+      "imageUrl": "./img/Taj_Mahal.jpg",
+      "description": "愛の象徴として知られる、ムガル建築の最高傑作。"
+    }
+  ],
+  "beaches": [
+    {
+      "id": 1,
+      "name": "ボラボラ島, フランス領ポリネシア",
+      "imageUrl": "./img/Bora_Bora.jpg",
+      "description": "エメラルドグリーンの海と水上バンガローが魅力の南国リゾート。"
+    },
+    {
+      "id": 2,
+      "name": "コパカバーナ・ビーチ, ブラジル",
+      "imageUrl": "./img/Copacabana.jpg",
+      "description": "リオデジャネイロを代表するビーチで、活気ある雰囲気と美しい景色が楽しめる。"
+    }
+  ]
+}

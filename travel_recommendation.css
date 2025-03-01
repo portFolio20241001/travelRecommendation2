@@ -1,0 +1,457 @@
+/* Google Fontsのインポート */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 全体に適用する基本スタイル */
+*{
+    margin: 0; /* 余白をゼロに設定 */
+    padding: 0; /* パディングをゼロに設定 */
+    box-sizing: border-box; /* 幅・高さにパディングとボーダーを含める設定 */
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* フォントファミリーの設定 */
+    scroll-behavior: smooth; /* スムーズスクロールを適用 */
+}
+
+/*　　　　　(1)～(4)は直接HTMLで指定するももではなくCSSで設定するもの　　　　*/
+
+
+/* (1) スクロールバーのスタイル設定 
+    これはスクロールバー全体のスタイルを定義します。
+    この部分のスタイルで、スクロールバーの幅や高さを設定できます。
+    width: 8px; は、スクロールバーの幅を8pxに設定する意味です。
+*/
+::-webkit-scrollbar {
+    width: 8px; /* スクロールバーの幅を8pxに設定 */
+}
+
+/* (2) スクロールバーのつまみ部分のスタイル設定 
+    これはスクロールバーの「つまみ」の部分のスタイルを設定します。
+    つまみは、スクロールバーをドラッグするための部分で、背景色や角の丸みなどを設定できます。
+*/
+::-webkit-scrollbar-thumb {
+    background: #888; /* 背景色を灰色に設定 */
+    border-radius: 5px; /* 角を丸くする */
+}
+
+/* (3) スクロールバーのつまみ部分の【　ホバー時　】のスタイル設定 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* ホバー時に色を濃くする */
+}
+
+/* (4) スクロールバーのトラック部分のスタイル設定 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 背景色を薄い灰色に設定 */
+}
+
+/* (5) ナビゲーションバーのスタイル */
+nav{
+    display: flex; /* 横並びのフレックスボックス */
+    justify-content: space-between; /* 両端にアイテムを配置 イメージ：https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg　*/
+    padding: 1rem 1rem; /* パディングの設定 */
+    align-items: center; /* アイテムを中央に配置 */
+    background: linear-gradient(120deg, rgb(2, 55, 231), rgb(23, 21, 148), rgb(32, 19, 88)); /* グラデーション背景 */
+    position: fixed; /* 固定位置に設定 https://saruwakakun.com/wp-content/uploads/2017/02/bdrposition-15.png*/
+    top: 0; /* 上端に固定 */
+    right: 0; /* 右端に固定 */
+    left: 0; /* 左端に固定 */
+}
+
+/* (6) ロゴ部分のスタイル */
+#logo{
+    display: flex; /* 横並びにする */
+    align-items: center; /* アイテムを中央に配置 */
+}
+
+/* (7) ロゴテキストのスタイル */
+.logo{
+    color: #fff; /* 文字色を白に設定 */
+}
+
+/* (8) ロゴの名前部分のスタイル */
+.name{
+    font-size: 1.3rem; /* フォントサイズを1.3remに設定 */
+    color: #fff; /* 文字色を白に設定 */
+    margin-left: .5rem; /* 左側に0.5remのマージンを設定 */
+    font-family: "Kaushan Script", cursive; /* 手書き風フォントに設定 */
+    font-weight: 400; /* フォントの太さを400に設定 */
+    font-style: normal; /* フォントスタイルを通常に設定 */
+}
+
+/* (9) ナビゲーションリンクのスタイル */
+#links a{
+    text-decoration: none; /* 下線を消す */
+    margin-left: 1rem; /* 左側に1remのマージンを設定 */
+    color: #fff; /* 文字色を白に設定 */
+    font-weight: 400; /* フォントの太さを400に設定 */
+    font-size: 1.2rem; /* フォントサイズを1.2remに設定 */
+    transition: .3s ease-out; /* ホバー時のトランジションを設定 */
+}
+
+/* (10) ナビゲーションリンクのホバー時のスタイル */
+#links a:hover{
+    color: yellow; /* ホバー時に文字色を黄色に設定 */
+}
+
+/* (11) 検索入力ボックスのスタイル */
+.searchinput{
+    width: 20rem; /* 幅を15remに設定 */
+    border: none; /* ボーダーを消す */
+    outline: none; /* アウトラインを消す */
+    color: rgb(10, 41, 143); /* 文字色を指定 */
+}
+
+/* (12) 検索ボックスのプレースホルダーのスタイル 
+    ⇒::placeholder は全ての入力フィールドに適用される。特定のフィールドにだけスタイルを適用したい場合は、
+    特定のセレクタを使って条件を絞り込む必要があります。
+    例えば、input[type="text"]::placeholder や textarea::placeholder のように指定します。
+*/
+::placeholder{
+    color: rgb(10, 41, 143); /* プレースホルダーの文字色を指定 */
+}
+
+/* (13) 検索ボタンのスタイル */
+#search{
+    background-color: #fff; /* 背景色を白に設定 */
+    padding: .3rem 1rem; /* パディングを設定 */
+    border-radius: 20px; /* 角を丸く設定 */
+}
+
+/* (14) 検索アイコンのスタイル */
+.searchicon{
+    color: rgb(37, 1, 198); /* アイコンの色を指定 */
+}
+
+/* (15) ボタンのスタイル */
+.btn{
+    padding: .2rem .4rem; /* パディングを設定 */
+    border-radius: 5px; /* 角を丸く設定 */
+    border: none; /* ボーダーを消す */
+    outline: none; /* アウトラインを消す */
+    background-color: rgb(15, 0, 179); /* 背景色を指定 */
+    color: #fff; /* 文字色を白に設定 */
+    margin-left: .3rem; /* 左側に0.3remのマージンを設定 */
+
+    cursor: pointer; /* マウスオーバー時にカーソルをポインターにする */
+}
+
+/* (15)’ ボタンのホバー時のスタイル */
+.btn:hover{
+    background-color: rgb(15, 0, 179); /* 背景色を指定 */
+    color: yellow; /* ホバー時に文字色を黄色に設定 */
+}
+
+/* (16) ホームセクションのスタイル */
+.MainSection{
+    margin-top: 5rem; /* 上部に5remのマージンを設定 */
+    width: 100%; /* 幅を100%に設定 */
+    height: auto; /* 高さを自動設定 */
+    background-image: url("./img/city.jpg"); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をカバーに設定 */
+    background-attachment: fixed; /* 背景画像を固定 */
+    background-repeat: no-repeat; /* 背景画像の繰り返しを無効に設定 */
+    display: flex; /* フレックスボックスで表示 */
+    align-items: flex-start; /* アイテムを上端に揃える */
+    
+}
+
+/* (17) メインページのスタイル */
+.mainpage{
+    display: flex; /* フレックスボックスで表示 */
+    flex-direction: column; /* 縦方向に並べる */
+}
+
+/* (18) ホームコンテンツのスタイル */
+.Homecontent{
+    display: flex; /* フレックスボックスで表示 */
+    background: linear-gradient(
+                    to right, 
+                    rgb(44, 79, 177), 
+                    rgba(17, 94, 156, 0.632), 
+                    rgba(5, 104, 107, 0.332), 
+                    #ffffff00); /* グラデーション背景 */
+    height: 100%; /* 高さを100%に設定 */
+    padding: 2rem 3rem; /* パディングを設定 */
+}
+
+/* (19) リンクのロゴのスタイル */
+.linkslogo{
+    color: #fff; /* 文字色を白に設定 */
+    transition: color 0.5s ease-out; /* トランジションを設定0.5秒かけて黄色に変化 */
+}
+
+/* (20) リンクアイコンのホバー時のスタイル */
+.linkslogo:hover{
+    color: gold; /* ホバー時に文字色を金色に設定 */
+}
+
+
+/* (21) 縦線のスタイル */
+.verticalline {
+    width: 2px; /* 幅を2pxに設定 */
+    height: 18rem; /* 高さを18remに設定 */
+    background-color: #fff; /* 背景色を白に設定 */
+    border-radius: 2px; /* 角を丸くする */
+    margin-bottom: 5rem; /* 下部のマージンを5remに設定 */
+}
+
+/* (22) ソーシャルリンクのマージン設定 */
+.sociallinks a {
+    margin-bottom: 1.5rem; /* 下部のマージンを1.5remに設定 */
+}
+
+/* (23) リンクコンテナのスタイル */
+.links {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 垂直方向に配置 */
+    align-items: center; /* 中央に配置 */
+}
+
+/* (24) ソーシャルリンクの固定位置設定 */
+.sociallinks {
+    position: fixed; /* 固定配置 */
+    bottom: 0; /* 下部に配置 */
+    left: 1%; /* 左端から1%の位置に配置 */
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 垂直方向に配置 */
+    align-items: center; /* 中央に配置 */
+}
+
+/* (25) メインコンテンツのパディング設定 */
+.mainhomecontent {
+    padding: 5rem 2rem; /* 上下に5rem、左右に2remのパディング */
+}
+
+/* (26) ホームセクションのヘッダーのスタイル */
+.homesectionheader {
+    font-size: 5rem; /* フォントサイズを5remに設定 */
+    font-family: "Poppins", sans-serif; /* フォントファミリーを指定 */
+    font-weight: 700; /* フォントウェイトを700に設定 */
+    font-style: normal; /* フォントスタイルを通常に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    font-weight: bolder; /* フォントウェイトを太く設定 */
+    line-height: 5rem; /* 行の高さを5remに設定 */
+}
+
+/* (27) ホームセクションの説明文のスタイル */
+.homesectiondescriptoin {
+    color: #fff; /* 文字色を白に設定 */
+    margin-top: 2rem; /* 上部に2remのマージンを設定 */
+    font-size: 1.2rem; /* フォントサイズを1.2remに設定 */
+}
+
+/* (28) 本の予約ボタンのスタイル */
+.bookbtn {
+    padding: .7rem 3rem; /* 上下に0.7rem、左右に3remのパディング */
+    background-color: rgb(0, 26, 173); /* 背景色を指定 */
+    border: none; /* 枠線なし */
+    outline: none; /* アウトラインなし */
+    color: #fff; /* 文字色を白に設定 */
+    font-weight: bold; /* フォントウェイトを太字に設定 */
+    margin-top: 2rem; /* 上部に2remのマージンを設定 */
+    cursor: pointer; /* カーソルをポインターに設定 */
+    border-radius: 5px; /* 角を5pxに丸く設定 */
+    box-shadow: 0 0 8px #fff; /* 白い影を追加 */
+    transition: color 0.2s ease-out, background-color 0.3s ease-out; /* スムーズに変化するトランジション */
+}
+
+/* (29) 本の予約ボタンのホバー時のスタイル */
+.bookbtn:hover {
+    background-color: rgb(216, 240, 1); /* ホバー時に背景色を変更 */
+    box-shadow: 0 0 8px #fbfe28; /* ホバー時に影の色を変更 */
+    color: red;
+}
+
+/* (30) Aboutセクションのスタイル */
+#About {
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 垂直方向に配置 */
+    width: 100%; /* 幅を100%に設定 */
+    height: auto; /* 高さは自動調整 */
+    padding: 4rem 5rem; /* 上下に4rem、左右に5remのパディング */
+    background: linear-gradient(to right,
+                                rgb(44, 79, 177), 
+                                rgba(17, 94, 156, 0.632), 
+                                rgba(5, 104, 107, 0.332), 
+                                #ffffff00); /* グラデーション背景 */
+}
+
+/* (31) Aboutセクションのヘッダーのスタイル */
+.aboutusheader {
+    font-size: 5rem; /* フォントサイズを5remに設定 */
+    font-family: "Poppins", sans-serif; /* フォントファミリーを指定 */
+    font-weight: 700; /* フォントウェイトを700に設定 */
+    font-style: normal; /* フォントスタイルを通常に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    font-weight: bolder; /* フォントウェイトを太く設定 */
+    line-height: 5rem; /* 行の高さを5remに設定 */
+}
+
+/* (32) Aboutセクションのテキストボックスのスタイル */
+.aboutustxt {
+    background-color: rgba(0, 0, 0, 0.288); /* 背景色に半透明の黒を設定 */
+    padding: 1rem 1rem; /* 上下左右に1remのパディング */
+    width: 40rem; /* 幅を40remに設定 */
+    height: auto; /* 高さは自動調整 */
+    border-radius: 10px; /* 角を10pxに丸く設定 */
+    margin-top: 2rem; /* 上部に2remのマージンを設定 */
+    color: #fff; /* 文字色を白に設定 */
+    font-size: 1.2rem; /* フォントサイズを1.2remに設定 */
+}
+
+/* (33) Contact Usセクションのスタイル */
+#Contactus {
+    width: 100%; /* 幅を100%に設定 */
+    height: 60vh; /* 高さを60vhに設定 */
+    padding: 2rem 5rem; /* 上下に2rem、左右に5remのパディング */
+    background: linear-gradient(to right, 
+                                rgb(44, 79, 177), 
+                                rgba(17, 94, 156, 0.632), 
+                                rgba(5, 104, 107, 0.332), 
+                                #ffffff00); /* グラデーション背景 */
+}
+
+/* (34) Contact Usセクションのタイトルのスタイル */
+.contactustittle {
+    font-size: 4rem; /* フォントサイズを4remに設定 */
+    font-family: "Poppins", sans-serif; /* フォントファミリーを指定 */
+    font-weight: 700; /* フォントウェイトを700に設定 */
+    font-style: normal; /* フォントスタイルを通常に設定 */
+    color: #fff; /* 文字色を白に設定 */
+    font-weight: bolder; /* フォントウェイトを太く設定 */
+    line-height: 5rem; /* 行の高さを5remに設定 */
+}
+
+
+/* (35) フォームセクションのスタイル */
+.formsection{
+    margin-top: 2rem; /* 上部のマージン */
+    display: flex; /* フレックスボックスの使用 */
+    align-items: center; /* 垂直方向に中央揃え */
+    justify-content: center; /* 水平方向に中央揃え */
+    padding: 1rem 1rem; /* 内側の余白 */
+    background-color: rgba(0, 0, 0, 0.288); /* 背景色（半透明） */
+}
+
+/* (36) フォーム全体のスタイル */
+form{
+    width: 100%; /* フォームの幅を100%に設定 */
+}
+
+/* (37) ラベルのスタイル */
+.labels{
+    color: #fff; /* 文字色を白に設定 */
+}
+
+/* (38) 入力フィールドのスタイル */
+form .inputval{
+    width: 100%; /* 入力フィールドの幅を100%に設定 */
+    border: .5px solid #fff; /* 白い枠線 */
+    outline: none; /* フォーカス時のアウトラインを非表示 */
+    color: #fff; /* 文字色を白に設定 */
+    background: transparent; /* 背景を透明に設定 */
+    border-radius: 5px; /* 角を丸く設定 */
+    padding: .3rem .5rem; /* 内側の余白 */
+}
+
+/* (39) 送信ボタンのスタイル */
+.submitmessagebtn{
+    width: 100%; /* ボタンの幅を100%に設定 */
+    padding: .5rem 0; /* 上下の余白 */
+    margin-top: .8rem; /* 上部のマージン */
+    color: #fff; /* 文字色を白に設定 */
+    background-color:rgb(13, 0, 202); /* 背景色 */
+    outline: none; /* アウトラインを非表示 */
+    border: none; /* 枠線を非表示 */
+    cursor: pointer; /* カーソルをポインターに設定 */
+
+    font-weight: bold; /* フォントウェイトを太字に設定 */
+    border-radius: 5px; /* 角を5pxに丸く設定 */
+    box-shadow: 0 0 8px #fff; /* 白い影を追加 */
+    transition: color 0.2s ease-out, background-color 0.3s ease-out; /* スムーズに変化するトランジション */
+}
+
+/* (39)’ ボタンのホバー時のスタイル */
+.submitmessagebtn:hover{
+    background-color: rgba(255, 251, 0, 0.861); /* ホバー時に背景色を変更 */
+    box-shadow: 0 0 8px #fff; /* 白い影を追加 */
+    color: rgb(244, 0, 0);
+}
+
+
+
+
+/* (40) ドロップダウンメニューのスタイル */
+#dropdown{
+    background-color: #55555595; /* 半透明の灰色背景 */
+    position: absolute; /* 絶対位置 */
+    width: 30rem; /* 幅を30remに設定 */
+    height: auto; /* 高さは自動調整 */
+    max-height: 600px; /* 高さの上限を設定 */
+    overflow: auto; /* 検索結果が多い場合スクロールできるように */
+    padding: 1rem 1rem; /* 内側の余白 */
+    top: 100%; /* 上部から100%の位置 */
+    right: 1%; /* 右から1%の位置 */
+    margin-top: .5rem; /* 上部のマージン */
+    border-radius: 10px; /* 角を丸く設定 */
+    border: 1px solid white; /* 白い枠線 */
+    display: none; /* 初期HTML読み込み時は非表示（検索したあとアクティブにする） */
+}
+
+/* (41) ドロップダウンメニューのヘッダー部分のスタイル */
+.dropdown-header{
+    padding: .5rem 1rem; /* 内側の余白 */
+    display: flex; /* フレックスボックス */
+    justify-content: flex-end; /* 右端に配置 */
+}
+
+/* (42) 閉じるボタンのスタイル */
+#close-btn{
+    padding: .5rem .7rem; /* 内側の余白 */
+    border: none; /* 枠線を非表示 */
+    background-color: rgb(67, 68, 126); /* 背景色 */
+    outline: none; /* アウトラインを非表示 */
+    color: #fff; /* 文字色を白に設定 */
+    font-weight: bolder; /* 太字に設定 */
+    transition: .3s; /* トランジション効果 */
+    border-radius: 5px; /* 角を丸く設定 */
+    cursor: pointer; /* カーソルをポインターに設定 */
+}
+
+/* (43) 閉じるボタンのホバー時のスタイル */
+#close-btn:hover{
+    background-color: rgb(107, 67, 126); /* ホバー時の背景色 */
+}
+
+/* (44) 結果コンテナのスタイル （Javascriptで動的にHTMLが生成されたあと適用）*/
+#resultContainer{
+    width: 100%; /* 幅を100%に設定 */
+    margin-bottom: 1rem; /* 下部のマージン */
+    background-color: rgba(24, 0, 207, 0.721); /* 背景色（半透明） */
+    border: 1px solid white; /* 白い枠線 */
+    padding: .5rem .5rem; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸く設定 */
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.686); /* 影を追加 */
+
+
+    overflow-y: auto; /* 縦スクロールを可能に */
+}
+
+/* (45) 説明文のスタイル （Javascriptで動的にHTMLが生成されたあと適用）*/
+.description{
+    font-weight: bolder; /* 太字に設定 */
+    color: #fff; /* 文字色を白に設定 */
+}
+
+/* (46) 検索画像のスタイル （Javascriptで動的にHTMLが生成されたあと適用）*/
+.search-img{
+    width: 100%; /* 幅を100%に設定 */
+}
+
+/* (47) タイトルのスタイル （Javascriptで動的にHTMLが生成されたあと適用）*/
+.title{
+    color: #fff; /* 文字色を白に設定 */
+}
+
+/* (48) 検索結果が見つからない場合のスタイル （Javascriptで動的にHTMLが生成されたあと適用）*/
+.notfound{
+    color: #fff; /* 文字色を白に設定 */
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 文字コードを設定 -->
+    <meta charset="UTF-8">
+    <!-- モバイルデバイスに最適化 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ページタイトルを設定 -->
+    <title>TravelAgain</title>
+    <!-- FontAwesomeというアイコンフォントライブラリをHTMLに読み込む
+        (様々なアイコンをウェブページで簡単に使えるようにする)         
+        https://fontawesome.com/v4/icons/                        -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 外部CSSファイルを読み込み -->
+    <link rel="stylesheet" href="./travel_recommendation.css">
+</head>
+<body>
+
+    <!-- (5) ナビゲーションバー -->
+    <nav>
+        <!-- (6) (7) ロゴ部分 -->
+        <div id="logo">
+            <!-- 飛行機のアイコン -->
+            <i class="fa fa-plane fa-3x logo" aria-hidden="true"></i>
+            <!-- (8) サイト名 -->
+            <p class="name">TravelAgain</p>
+        </div>
+        
+        <!-- ナビゲーションリンク -->
+        <div id="links">
+            <!-- (9) (10) Homeリンク -->
+            <a href="#Home">Home</a>
+            <!-- (9) (10) About Usリンク -->
+            <a href="#About">About Us</a>
+            <!-- (9) (10) Contact Usリンク -->
+            <a href="#Contactus">Contact Us</a>
+        </div>
+        
+        <!-- (13) 検索バー -->
+        <div id="search">
+            <!-- (11) (12) 検索入力欄 -->
+            <input id="searchinput" class="searchinput" placeholder="Enter a destination or keyword" type="text">
+            <!-- (14) 検索アイコン -->
+            <i class="fa fa-search searchicon" aria-hidden="true"></i>
+            <!-- (15) 検索ボタン -->
+            <button id="searchbtn" class="btn">Search</button>
+            <!-- (15) クリアボタン -->
+            <button id="clearbtn" class="btn">Clear</button>
+        </div>
+        
+        <!-- (40) ドロップダウンメニュー（検索結果をここに表示させる）初期読み込み時はCSSで非表示 -->
+        <div id="dropdown">
+            <!-- (41) (42) (43)ドロップダウンのヘッダー -->
+            <div class="dropdown-header"><button id="close-btn">X</button></div>
+            <!-- (44) 検索結果表示エリア Javascriptで動的生成される ため、
+                (45) 説明文のスタイル 、(46) 検索画像のスタイル、(47) タイトルのスタイル、
+                (48) 検索結果が見つからない場合のスタイルは動的に設定される。
+            -->
+            <div id="resultContainer">
+            </div>
+        </div>
+    </nav>
+
+    <!-- (16) メインセクション -->
+    <div class="MainSection">
+        <!-- (17) メインページ -->
+        <div class="mainpage">
+        
+            <!-- (24)  ソーシャルメディアリンク -->
+            <div class="sociallinks">
+                <!-- (22)Twitterリンク -->
+                <a href="https://twitter.com/?lang=en" target="_blank">
+                    <!-- (20)Twitterアイコン -->
+                    <i class="fa fa-twitter fa-2x linkslogo" aria-hidden="true"></i>
+                </a>
+                <!-- (22)Facebookリンク -->
+                <a href="https://www.facebook.com/" target="_blank">
+                    <!-- (20)Facebookアイコン -->
+                    <i class="fa fa-facebook fa-2x linkslogo" aria-hidden="true"></i>
+                </a>
+                <!-- (22)Instagramリンク -->
+                <a href="https://www.instagram.com/" target="_blank">
+                    <!-- (20)Instagramアイコン -->
+                    <i class="fa fa-instagram fa-2x linkslogo" aria-hidden="true"></i>
+                </a>
+                <!-- (22)YouTubeリンク -->
+                <a href="https://www.youtube.com/" target="_blank">
+                    <!-- (20)YouTubeアイコン -->
+                    <i class="fa fa-youtube-play fa-2x linkslogo" aria-hidden="true"></i>
+                </a>
+            </div>
+            
+            <!-- ホームセクション -->
+            <div id="Home">
+                <!--  (18) ホームコンテンツ -->
+                <div class="Homecontent">
+                    <!-- (25) ホームのメインコンテンツ -->
+                    <div class="mainhomecontent">
+                        <!-- (26) セクションヘッダー -->
+                        <p class="homesectionheader">Explore <br>Dream <br>Destination</p>
+                        <!-- (27) セクション説明 -->
+                        <p class="homesectiondescriptoin">
+                            It encourages exploration of unfamiliar <br>
+                            territories, embracing diverse cultures and <br>
+                            landscapes, while pursuing the desired <br>
+                            destination that captivates the heart and <br>
+                            ignites a sense of wonder.
+                        </p>
+                        <!-- (28) (29) 予約ボタン -->
+                        <Button class="bookbtn">Book Now</Button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- (30) About Usセクション -->
+            <div id="About">
+                <!-- (31) About Usヘッダー -->
+                <p class="aboutusheader">About Us</p>
+                <div>
+                    <!-- (32) About Usテキスト -->
+                    <p class="aboutustxt">
+                        Welcome to Our Company! We are a team of passionate individuals dedicated to providing excellent services/products to our customers. 
+                        Our mission is to provide the best experience for people traveling to different destinations around the world. 
+                        Our values include integrity, innovation, customer satisfaction, and teamwork. 
+                        We believe in putting our customers first and working together to achieve
+                        our goals. 
+                        Feel free to explore our website to learn more about what we offer!
+                    </p>
+                </div>
+            </div>
+
+            <!-- (33) Contact Usセクション -->
+            <div id="Contactus">
+                <!-- (34) Contact Usタイトルのスタイル -->
+                <p class="contactustittle">CONTACT US</p>
+                <!-- (35) フォームセクションのスタイル -->
+                <div class="formsection">
+                    <!-- (36) フォームセクション -->
+                    <form action="">
+                        <!-- (37) (38) 名前入力フィールド -->
+                        <label class="labels" for="name">First Name</label> <br>
+                        <input class="inputval" type="text" title="name"> <br>
+                        <!--  (37) (38) メールアドレス入力フィールド -->
+                        <label class="labels" for="email">Email</label> <br>
+                        <input class="inputval" type="email" title="email"> <br>
+                        <!--  (37) (38) メッセージ入力フィールド -->
+                        <label class="labels" for="message">Message</label> <br>
+                        <input class="inputval" type="text" title="message">
+                        <!-- (39) 送信ボタン -->
+                        <button class="submitmessagebtn" type="Submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="travel_recommendation.js"></script>
+</body>
+</html>
